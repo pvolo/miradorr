@@ -21,7 +21,7 @@ def ingresar_pago(request, residente_id):
             pago = Pago(
                 residente=residente,
                 monto=form.cleaned_data['monto'],
-                estado=True  # Simulamos que el pago es exitoso
+                estado=True  # el pago es exitoso
             )
             pago.save()
             # Redirigir a pago_exitoso con nombre y apellido del residente

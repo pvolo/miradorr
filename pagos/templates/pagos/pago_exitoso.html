@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago Exitoso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Pago realizado con éxito!</h1>
-    <p>Gracias por su pago, <strong>{{ residente.nombre }} {{ residente.apellido }}</strong>. El proceso ha sido completado satisfactoriamente.</p>
+    <div class="container">
+        <h1>¡Pago realizado con éxito!</h1>
+        <p>Gracias por su pago, <strong>{{ residente.nombre }} {{ residente.apellido }}</strong>. El proceso ha sido completado satisfactoriamente.</p> <br>
+        <p>Puede cerrar esta Pestaña.</p>
+    </div>
 </body>
 </html>

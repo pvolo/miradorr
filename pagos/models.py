@@ -12,7 +12,7 @@ class Pago(models.Model):
     residente = models.ForeignKey(Residente, on_delete=models.CASCADE)
     monto = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_pago = models.DateTimeField(auto_now_add=True)
-    estado = models.BooleanField(default=False)  # Estado del pago (True = pagado)
+    estado = models.BooleanField(default=False)  # (True = pagado)
 
     def __str__(self):
         return f'Pago de {self.residente.nombre} {self.residente.apellido} - Estado: {"Pagado" if self.estado else "Pendiente"}'
