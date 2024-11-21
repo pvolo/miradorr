@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar Pago</title>
+</head>
+<body>
+    <h1>Ingresar Pago para {{ residente.nombre }} {{ residente.apellido }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Pagar</button>
+    </form>
+</body>
+</html>
