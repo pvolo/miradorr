@@ -13,7 +13,6 @@ class ResidenteForm(forms.ModelForm):
         
 class PagoForm(forms.Form):
     numero_tarjeta = forms.CharField(max_length=16)
-    # Cambiamos a CharField para manejar el formato MM/AA
     fecha_expiracion = forms.CharField(max_length=5, widget=forms.TextInput(attrs={'placeholder': 'MM/AA'}))
     titular = forms.CharField(max_length=100)
     codigo_seguridad = forms.CharField(max_length=3)
@@ -21,7 +20,6 @@ class PagoForm(forms.Form):
 
     def clean_fecha_expiracion(self):
         fecha = self.cleaned_data['fecha_expiracion']
-        # Validación de formato MM/AA (ejemplo: 03/25)
         if not re.match(r'^\d{2}/\d{2}$', fecha):
             raise ValidationError('Ingrese una fecha válida en formato MM/AA')
         return fecha
